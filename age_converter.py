@@ -1,4 +1,7 @@
 # age_converter.py
+
+# outputs a user's age in seconds based on their birthdate and today's date
+
 from datetime import date
 import calendar
 
