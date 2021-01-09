@@ -4,39 +4,52 @@ import calendar
 
 print("\n\nHello, my name is Brady.\n")
 
-dte = date.today()
-
-def month_length(m, y):
+def month_length(month, year): #how many days are in the given month?
     leap = 0
-    if y % 4 == 0: #is year divisible by 4?
+    if year % 4 == 0: #is year divisible by 4?
         leap = 1
-    if y % 100 == 0 and y % 400 != 0: #year divisible by 100, but not 400
+    if year % 100 == 0 and year % 400 != 0: #year divisible by 100, but not 400
         leap = 0
-    if m == 2: #February special case
+    if month == 2: #February special case
         return 28 + leap
     big_months = [1,3,5,7,8,10,12] #31 day months
-    if m in big_months:
+    if month in big_months:
         return 31
     return 30
+
+def valid_day(day): #does the given date exist in any month?
+    if 1 <= day <= 31:
+        return True
+    return False
+
+#does the given day exist in the user's birth month?
+def day_in_month(day, month, year): #year is to check if February has 29 days
+    if 1 <= day <= month_length(month, year):
+        return True
+    return False
 
 while True: #checks whether user inputs a valid month
     user_month = int(input("Please enter your birth month as a number:\n"))
     if 1 <= user_month <= 12:
-        while True: #checks if user inputs a valid day based on month and year
-            user_day = int(input("\nPlease enter your birth day as a "
-            "number:\n"))
-            if user_day < 1 or user_day > 31:
+        while True: #checks if user inputs a valid day
+            user_day = int(input("\nPlease enter your birth day:\n"))
+
+            if not valid_day(user_day):
                 print("\nI'm sorry, that's not a valid day.\n")
-            user_year = int(input("\nPlease enter your birth year:\n"))
-            if 1 <= user_day <= month_length(user_month, user_year):
-                break
-            else:
-                print("\nI'm sorry, that's not a valid day in the "
-                "month and year you chose.\n")
+
+            else:  
+                user_year = int(input("\nPlease enter your birth year:\n"))
+                if day_in_month(user_day, user_month, user_year):
+                    break
+
+                else:
+                    print("\nI'm sorry, that's not a valid day in the "
+                    "month and year you chose.\n")
         break
     else:
         print("\nI'm sorry, that's not a valid month.\n")
 
+dte = date.today() #calls today's date
 
 if dte.month == user_month and dte.day == user_day:
     print("\nHappy Birthday!\n")
