@@ -22,7 +22,8 @@ def basic():
 
 def differentiate():
     print("\nNote: Use '**' to represent exponents.\n\t'2x', must be '2*x', "
-          "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be 'acos', etc.")
+          "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be "
+          "'acos', etc.")
     f = sympy.sympify(input("\nEnter your function:\n"))
     n = int(input("\nWhich derivative do you want?\n"))
 
@@ -35,7 +36,8 @@ def differentiate():
 
 def indef_integrate():
     print("\nNote: Use '**' to represent exponents.\n\t'2x', must be '2*x', "
-          "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be 'acos', etc.")
+          "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be " 
+          "'acos', etc.")
     f = sympy.sympify(input("\nEnter your function:\n"))
     F = sympy.simplify(sympy.integrate(f, x))
 
@@ -44,7 +46,8 @@ def indef_integrate():
 
 def def_integrate():
     print("\nNote: Use '**' to represent exponents.\n\t'2x', must be '2*x', "
-          "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be 'acos', etc.")
+          "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be " 
+          "'acos', etc.")
     f = sympy.sympify(input("\nEnter your function:\n"))
     a = int(input("\nEnter your lower bound:\n"))
     b = int(input("\nEnter your upper bound:\n"))
