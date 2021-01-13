@@ -1,2 +1,2 @@
 # Sample_Programs
-I've created this repository as a showcase of all the programs I've either written or modified. It should give you a good idea of my experience level, and my commitment to improving my coding skills.
+I've created this repository as a showcase of all the programs I've either written or modified. It should give you a good idea of my experience level, and my commitment to improving my coding skills. The "requirements" file, as well as the original versions of the "factor_quadratic" and "age_converter" programs belong to my instructor during a week long intensive at Brookhaven National Lab, David Biersach. You can find him on GitHub at github.com/dbiersach.
