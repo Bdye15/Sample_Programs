@@ -1,4 +1,4 @@
-# derivative_calculator.py
+# calculator.py
 
 # can perform the four basic operations, plus differentiation, definite, and
 # indefinite integration
