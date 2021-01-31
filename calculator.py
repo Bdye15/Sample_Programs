@@ -8,7 +8,7 @@ import sympy
 x, y, z = sympy.symbols("x y z")
 
 
-def find_suffix(num):
+def find_suffix(num):  # attaches the correct suffix to the "nth" derivative
     if num % 10 == 1:
         return "st"
     elif num % 10 == 2:
@@ -19,15 +19,15 @@ def find_suffix(num):
         return "th"
 
 
-def basic():
+def basic():  # simple addition, subtraction, multiplication, or division
     a = sympy.sympify(input("\nEnter your operation:\n"))
     print(f"\n{a}\n")
 
 
-def differentiate():
+def differentiate():  # derivatives
     print("\nNote: Use '**' to represent exponents.\n\t'2x', must be '2*x', "
           "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be "
-          "'acos', etc.")
+          "'acos', etc.")  # tells the user how to correctly format their input
     f = sympy.sympify(input("\nEnter your function:\n"))
     n = int(input("\nWhich derivative do you want?\n"))
 
@@ -38,20 +38,20 @@ def differentiate():
     print(f"\nThe {n}{suffix} derivative of {f} is {f_prime}\n")
 
 
-def indef_integrate():
+def indef_integrate():  # indefinite integrals
     print("\nNote: Use '**' to represent exponents.\n\t'2x', must be '2*x', "
           "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be "
-          "'acos', etc.")
+          "'acos', etc.")  # tells the user how to correctly format their input
     f = sympy.sympify(input("\nEnter your function:\n"))
     F = sympy.simplify(sympy.integrate(f, x))
 
     print(f"\nThe integral of {f} is {F}\n")
 
 
-def def_integrate():
+def def_integrate():  # definite integrals
     print("\nNote: Use '**' to represent exponents.\n\t'2x', must be '2*x', "
           "etc.\n\tSquare roots must be 'sqrt()'\n\tInverse trig must be "
-          "'acos', etc.")
+          "'acos', etc.")  # tells the user how to correctly format their input
     f = sympy.sympify(input("\nEnter your function:\n"))
     a = sympy.sympify(input("\nEnter your lower bound:\n"))
     b = sympy.sympify(input("\nEnter your upper bound:\n"))
